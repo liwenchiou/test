@@ -11,36 +11,36 @@
             src: url('digital.ttf') format("truetype");
         }
     </style>
+    <script>
+        var imgs = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg"];//（设定想要显示的图片）
+        function time() {
+            var i = Math.floor(Math.random() * (6 + 0) + 0); //（获取随机数，设置m~n的随机，此处3是代表n，0处是m，可以替换）
+            document.getElementById("img_chang").src = "img/" + imgs[i];  //红色部分是自定义的图片文件夹目录
+        }
+        setInterval("time()", 3000);           //设定为3秒，可更换
+    </script>
     <link href="css/default.css" type="text/css" rel="stylesheet">
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/garden.js"></script>
     <script type="text/javascript" src="js/functions.js"></script>
-    <script type="text/javascript">
-        window.onload = function () {
-            setInterval("toggleSound()", 100);
-        }
 
-        function toggleSound() {
-            var music = document.getElementById("audios");//獲取ID  
-
-            if (music.paused) { //判讀是否播放  
-                music.paused = false;
-                music.play(); //沒有就播放 
-            }
-        }
-    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
 </head>
 
 <body>
-    <audio id="audios" src="balloon.mp3" controls="controls"></audio>
+    <audio id="audios" src="balloon.mp3" controls="controls" autoplay="autoplay"></audio>
     <div id="mainDiv">
         <div id="content">
+            <div id="img_div"><img id="img_chang" src="img/1.jpg" width="120" height="120"></div>
             <div id="code">
                 <span class="comments"># 琹琹貝貝，很開心我們終於走到這個階段，雖然過程曲折離奇，但我們還是一一排解了。</span><br />
                 <br />
                 <span class="comments"># 想起一開始，在台中孤單無聊，所以上wootalk打發時間，一開始發現上面的人都奇奇怪怪，本想玩玩打發時間而已，</span><br />
-                <span class="comments"># 沒想到某天遇到一個更奇怪的人，一直在問我一些假設性的問題，我就想知道…到底多會假設，到底要計劃到多細節，</span><br />
-                <span class="comments"># 真沒想到這個奇怪的人，居然可以跟我走到這邊，甚至要在一起繼續走下去。</span><br />
+                <span class="comments"># 沒想到某天遇到一個更奇怪的人，一直在問我一些假設性的問題，我就想知道….到底多會假設，到底要計劃到多細節，</span><br />
+                <span class="comments"># 真沒想到這個奇怪的人，居然可以會和我走到這邊，甚至要在繼續走下去。</span><br />
                 <br />
                 <span class="comments"># 聊天的時候說喜歡看恐怖片，所以第一次見面我就選了一部冷門的恐怖片，雖然到現在我還是不懂他在演什麼，但…這就是我們的第一次約會。</span><br />
                 <br />
@@ -48,10 +48,10 @@
                 <span class="comments"># 我真的以為這是告白了 哈哈</span><br />
                 <br />
                 <span class="comments"># 我們之間真的經歷很多奇奇怪怪的事，比如半夜掛急診，這真的是印象深刻，深刻到經歷的其他事情我都沒印象了</span><br />
-                <span class="comments"># 沒膽的貝貝，可憐憐</span><br />
+                <span class="comments"># 膽被割掉的貝貝，可憐憐</span><br />
                 <br />
-                <span class="comments"># 因為個性的關係，我有太多事情都只先有個開頭，等做了再去調整，所以不太習慣想得很全面，好在有貝貝總是把全部的事情都先想好，</span><br />
-                <span class="comments"># 雖然有時候我會覺得為啥要想這麼多，又不一定會發生，所以覺得有點煩，但我覺得這也沒什麼不行，所以我也在習慣調整中，貝貝最愛你了</span><br />
+                <span class="comments"># 因為個性的關係，我有太多事情都是先有個開頭，等做了再去調整，所以不太習慣想得很全面，好在有貝貝總是把全部的事情都先想好，</span><br />
+                <span class="comments"># 有時候我會覺得為啥要想這麼多，又不一定會發生，另一方面覺得這也沒什麼不對，所以我也在習慣調整中，貝貝最愛你了，要繼續囉囉嗦嗦唷!!</span><br />
                 <br />
                 <span class="comments"># 一路從台中到桃園，貝貝好在有你陪著我經歷了這麼多，工作不順、主管機掰都感謝有你陪我一起罵，一直鼓勵我，雖然我覺得我就只是念念，</span><br />
                 <span class="comments"># 抱怨一下，我還是有我自己的想法，但還是希望有個人抱抱支持我，謝謝貝貝，愛你</span><br />
@@ -64,15 +64,16 @@
                 <span class="comments"># 但我就想在你身邊，牽著你的手跟你一起發現這世界上所有障障的事情，一起笑、一起鬧、一起白頭、一起揍小猴子、一起喵喵叫、一起嗷嗷叫，</span><br />
                 <span class="comments"># 可以....請你答應我嗎???</span><br />
             </div>
+
             <div id="loveHeart">
                 <canvas id="garden"></canvas>
                 <div id="words">
                     <div id="messages">
                         貝貝，我們已經在一起
                         <div id="elapseClock"></div>
+
                     </div>
                     <div id="loveu">
-                        還會繼續增加下去唷.<br />
                         <div class="signature">- LI WEN | CHIU</div>
                     </div>
                 </div>
