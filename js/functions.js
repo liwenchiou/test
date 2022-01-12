@@ -2,6 +2,7 @@ var $window = $(window), gardenCtx, gardenCanvas, $garden, garden;
 var clientWidth = $(window).width();
 var clientHeight = $(window).height();
 $(function () {
+
 	$loveHeart = $("#loveHeart");
 	var a = $loveHeart.width() / 2;
 	var b = $loveHeart.height() / 2 - 55;
@@ -109,7 +110,7 @@ function timeElapse(c) {
 
 function showMessages() {
 	adjustWordsPosition();
-	$("#messages").fadeIn(5000, function () {
+	$("#messages").fadeIn(3000, function () {
 		showLoveU()
 	})
 }
@@ -127,3 +128,4 @@ function adjustCodePosition() {
 function showLoveU() {
 	$("#loveu").fadeIn(3000)
 };
+
